@@ -1,0 +1,12 @@
+config:
+  target: 'http://127.0.0.1:8000'
+  phases:
+    - duration: 120
+      arrivalRate: 10
+      rampTo: 50
+      name: 'Warm up the application'
+scenarios:
+  - name: 'get config'
+    flow:
+      - get:
+          url: '/api/v1/config/velvet'
